@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Zad2
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] a = Console.ReadLine().Split(' ').Select(y => double.Parse(y)).ToArray();
+            double[] b=new double[a.Length];
+            double x= Convert.ToDouble(Console.ReadLine());
+            Array.Copy(a, b, a.Length);
+           Array.Sort(a);
+           for(int i=0;i<a.Length; i++)
+            {
+               
+                if ((int)a[i] % 2==0)
+                {
+                    Console.Write(a[i]+ " ");
+                    
+                }   
+                
+            }
+            Console.WriteLine();
+            for (int i = 0; i < b.Length; i++)
+            {
+                if ((int)b[i] % 2 == 1 && a[i] > x)
+                {
+                    Console.Write(b[i] + " ");
+                }
+            }
+
+        }
+
+
+    }
+}
