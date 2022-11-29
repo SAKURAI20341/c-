@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 
 
-
+public class MainClass 
+{
     class Program
     {
         
@@ -17,4 +18,5 @@ using System.Threading.Tasks;
         }
     }
 
+}
 
