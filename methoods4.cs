@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace ConsoleApp9
 {
-public class Class
+ class programm
 {
     static void PrintEven(List<int> Print)
     {
@@ -28,7 +28,7 @@ public class Class
         }
         return num;
     }
-    public static void Main()
+    static void Main(string[] args)
     {
         int startValue = int.Parse(Console.ReadLine());
         int endValue = int.Parse(Console.ReadLine());
