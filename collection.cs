@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 
 
-{
+
     class Program
     {
         
@@ -16,5 +16,5 @@ using System.Threading.Tasks;
             Console.Write(text.IndexOf('O'));
         }
     }
-}
+
 
