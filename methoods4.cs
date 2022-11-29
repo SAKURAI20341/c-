@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+namespace ConsoleApp9
+{
 public class Class
 {
     static void PrintEven(List<int> Print)
@@ -33,4 +34,5 @@ public class Class
         int endValue = int.Parse(Console.ReadLine());
         PrintEven(GetMultiple(startValue, endValue));
     }
+}
 }
