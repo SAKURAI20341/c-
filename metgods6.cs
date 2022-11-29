@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using System.Threading;
-public class Class
+namespace ConsoleApp9
+{
+class Programm
 {
     static void VasyaStyle(int value)
     {
@@ -30,11 +32,11 @@ public class Class
         
     }
 
-    public static void Main()
+    static void Main(string[] args)
     {
         int number = int.Parse(Console.ReadLine());
         VasyaStyle(number);
 
     }
 }
-
+}
