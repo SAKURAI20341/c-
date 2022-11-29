@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 
 
-public class MainClass 
+public class  ConsoleApp9
 {
     class Program
     {
