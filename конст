@@ -1,0 +1,107 @@
+using System;
+
+
+public class Money
+{
+    public int rub, kop;
+
+    public Money() { }
+
+    public Money(int ru, int kops)
+    {
+        if (ru < 0 || kops < 0)
+        {
+            Console.Write("Не может быть отрицательным!");
+            return;
+        }
+        rub += ru;
+        if (kops > 100) rub++;
+        kop+= kops % 100;
+        rub += ru / 100;
+    }
+
+    public Money(string ru, string kops)
+    {
+        if (int.Parse(ru) < 0)
+        {
+            Console.Write("Не может быть отрицательным!");
+            return;
+        }
+        switch (kops)
+        {
+            case "р.":
+                rub += int.Parse(ru);
+                break;
+            default:
+                if (int.Parse(kops) > 100) rub++;
+                kop += int.Parse(ru) % 100;
+                rub += int.Parse(ru) / 100;
+                break;
+        }
+
+    }
+    public Money(string ru, string ru1, string kops1, string kops2)
+    {
+        if (int.Parse(ru) < 0 || int.Parse(kops1) < 0)
+        {
+            Console.Write("Не может быть отрицательным!");
+            return;
+        }
+        if (ru1 == "коп.")
+        {
+            Console.Write("Копейки и рубли перепутаны местами!");
+            return;
+        }
+        rub += int.Parse(ru);
+        if (int.Parse(kops1) > 100) rub++;
+        kop += int.Parse(kops1) % 100;
+        rub += int.Parse(kops1) / 100;
+    }
+
+    public static Money Sum(Money a, Money b)
+    {
+        return new Money(a.rub + b.rub, a.kop + b.kop);
+    }
+
+    public static Money Difference(Money a, Money b)
+    {
+        int j = 0;
+       if(a.kop<b.kop)
+        {
+            j++;
+        }
+        return new Money((a.rub- b.rub)-j, Math.Abs(a.kop - b.kop));
+    }
+
+    public void Print()
+    {
+        if (rub == 0) return;
+        Console.WriteLine($"{rub} руб {kop} к.");
+    }
+
+    public void PrintTransferCost(float p)
+    {
+        int n = (rub * 100 + kop);
+        int res = (int)Math.Ceiling(n + n * p);
+        Console.WriteLine($"{p / 100} руб {p % 100} к.");
+    }
+}
+
+class Program
+{
+    
+
+ 
+
+    static void Main()
+    {
+        Money x = new Money(34,50);
+        Money y = new Money(14,96);
+       Money q;
+        q = Money.Difference(x, y);
+        q.Print();
+        q = Money.Sum(x,y);
+        q.Print();
+        x.PrintTransferCost(0.05f);
+    }
+}
